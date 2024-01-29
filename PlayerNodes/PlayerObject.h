@@ -8,35 +8,43 @@ namespace gd {
 
     class PlayerObject : public GameObject, public AnimatedSpriteDelegate {
     public:
-        auto m_isHolding() {
+        bool m_isHolding() {
             return from<bool>(this, 0x775);
         }
 
-        auto m_isSliding() {
+        bool m_isSliding() {
             return from<bool>(this, 0x7fc);
         }
 
-        auto m_playerSize() {
+        float m_playerSize() {
             return from<float>(this, 0x7e0);
         }
 
-        auto m_playerSpeed() {
+        float m_playerSpeed() {
             return from<float>(this, 0x7e4);
         }
 
-        auto m_yAccel() {
+        double m_yAccel() {
             return from<double>(this, 0x790);
         }
 
-        auto m_xAccel() {
+        double m_xAccel() {
             return from<double>(this, 0x630);
         }
 
-        auto m_pWave() {
+        bool m_isFlying() {
+            return from<bool>(this, 0x7a9);
+        }
+
+        float m_pGravity() {
+            return from<float>(this, 0x934);
+        }
+
+        cocos2d::CCMotionStreak* m_pWave() {
             return from<cocos2d::CCMotionStreak*>(this, 0x620);
         }
         
-        auto m_pWaveTrail() {
+        HardStreak* m_pWaveTrail() {
             return from<HardStreak*>(this, 0x628);
         }
     };
