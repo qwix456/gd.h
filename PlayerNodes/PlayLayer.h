@@ -19,7 +19,10 @@ namespace gd {
             return from<GJGameLevel*>(this, 0x5e0);
         }
         cocos2d::CCLayer* m_objectLayer() {
-            return from<cocos2d::CCLayer*>(this, 0x9b8);
+            return from<cocos2d::CCLayer*>(this, 0x9b8); // also GJGroundLayer
+        }
+        cocos2d::CCLayer* m_pGroundLayer() {
+            return from<cocos2d::CCLayer*>(this, 0x9cc);
         }
         cocos2d::CCSprite* m_pBackgroundSprite() {
             return from<cocos2d::CCSprite*>(this, 0x9c4);

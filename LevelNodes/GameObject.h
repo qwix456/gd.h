@@ -38,6 +38,9 @@ namespace gd {
         int m_nObjectID() {
             return from<int>(this, 0x384);
         }
+        cocos2d::CCLayer* m_glow() {
+            return from<cocos2d::CCLayer*>(this, 0x280);
+        }
         GameObjectType m_nObjectType() {
             return from<GameObjectType>(this, 0x31c); // thx tpdea
         }

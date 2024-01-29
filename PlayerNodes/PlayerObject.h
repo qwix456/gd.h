@@ -12,6 +12,10 @@ namespace gd {
             return from<bool>(this, 0x775);
         }
 
+        cocos2d::CCSprite* m_pSecondarySprite() {
+            return from<cocos2d::CCSprite*>(this, 0x5f0);
+        }
+
         bool m_isSliding() {
             return from<bool>(this, 0x7fc);
         }
