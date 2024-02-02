@@ -8,7 +8,7 @@ namespace gd {
 
     class PlayerObject : public GameObject, public AnimatedSpriteDelegate {
     public:
-        bool m_isHolding() {
+        bool& m_isHolding() {
             return from<bool>(this, 0x775);
         }
 
@@ -16,23 +16,23 @@ namespace gd {
             return from<cocos2d::CCSprite*>(this, 0x5f0);
         }
 
-        bool m_isSliding() {
+        bool& m_isSliding() {
             return from<bool>(this, 0x7fc);
         }
 
-        float m_playerSize() {
+        float& m_playerSize() {
             return from<float>(this, 0x7e0);
         }
 
-        float m_playerSpeed() {
+        float& m_playerSpeed() {
             return from<float>(this, 0x7e4);
         }
 
-        double m_yAccel() {
+        double& m_yAccel() {
             return from<double>(this, 0x790);
         }
 
-        double m_xAccel() {
+        double& m_xAccel() {
             return from<double>(this, 0x630);
         }
 
@@ -50,6 +50,10 @@ namespace gd {
         
         HardStreak* m_pWaveTrail() {
             return from<HardStreak*>(this, 0x628);
+        }
+
+        void setSecondColor(cocos2d::_ccColor3B const& color) {
+            reinterpret_cast<void(__thiscall*)(PlayerObject*, cocos2d::_ccColor3B const&)>(base + 0x2D65A0)(this, color);
         }
     };
 }

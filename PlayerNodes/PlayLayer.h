@@ -19,13 +19,19 @@ namespace gd {
             return from<GJGameLevel*>(this, 0x5e0);
         }
         cocos2d::CCLayer* m_objectLayer() {
-            return from<cocos2d::CCLayer*>(this, 0x9b8); // also GJGroundLayer
+            return from<cocos2d::CCLayer*>(this, 0x9b8);
         }
-        cocos2d::CCLayer* m_pGroundLayer() {
-            return from<cocos2d::CCLayer*>(this, 0x9cc);
+        GJGroundLayer* m_pGroundLayer() {
+            return from<GJGroundLayer*>(this, 0x9cc);
+        }
+        cocos2d::CCLayer* m_pGroundLayer1() {
+            return from<cocos2d::CCLayer*>(this, 0x9d4);
         }
         cocos2d::CCSprite* m_pBackgroundSprite() {
             return from<cocos2d::CCSprite*>(this, 0x9c4);
+        }
+        cocos2d::CCArray* m_sectionObjects() {
+            return from<cocos2d::CCArray*>(this, 0x884);
         }
         bool m_bTwoPlayerMode() {
             return from<bool>(this, 0x36e);
@@ -45,6 +51,16 @@ namespace gd {
         int m_nTypeTrigger() {
             return from<int>(this, 0x384); // tpdea again
         }
+        LevelSettingsObject* m_levelSettings() {
+            return from<LevelSettingsObject*>(this, 0x880);
+        }
+        int sectionForPos(float x)
+ 		{
+ 			int section = static_cast<int>(x / 100);
+ 			if (section < 0)
+ 				section = 0;
+ 			return section;
+ 		}
     };
 }
 
