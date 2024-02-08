@@ -51,6 +51,9 @@ namespace gd {
         int m_nTypeTrigger() {
             return from<int>(this, 0x384); // tpdea again
         }
+        void* m_GJEffectManagerOBJ() {
+            return from<void*>(this, 0x650);
+        }
         LevelSettingsObject* m_levelSettings() {
             return from<LevelSettingsObject*>(this, 0x880);
         }

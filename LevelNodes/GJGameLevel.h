@@ -114,6 +114,18 @@ namespace gd {
         int m_pDailyID() {
             return m_pDailyIDRand() - m_pDailyIDRand2();
         }
+        int m_levelPasswordRand() {
+            return from<int>(this, 0x320);
+        }
+        int m_levelPasswordRand2() {
+            return from<int>(this, 0x324);
+        }
+        int m_levelPassword() {
+            return m_levelPasswordRand() - m_levelPasswordRand2();
+        }
+        bool m_password() {
+            return from<bool>(this, 0x2710);
+        }
         bool m_isPlatformerLevel() {
             return m_nLevelLength() == 5;
         }
